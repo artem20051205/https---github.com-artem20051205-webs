@@ -5,6 +5,9 @@ const height = 600;
 const c1 = document.getElementById("container1");
 const c2 = document.getElementById("container2");
 const c3 = document.getElementById("container3");
+const color1 = [1, 200, 155];
+const color2 = [255, 50, 100];
+const color3 = [100, 150, 200];
 
 // Scene 1 - Cylinder
 const scene1 = new THREE.Scene();
@@ -14,7 +17,7 @@ renderer1.setSize(width, height);
 c1.appendChild(renderer1.domElement);
 
 const geometry1 = new THREE.CylinderGeometry(1, 1, 2, 32);
-const material1 = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
+const material1 = new THREE.MeshBasicMaterial({ color: color1 });
 const cylinder = new THREE.Mesh(geometry1, material1);
 scene1.add(cylinder);
 
@@ -28,7 +31,7 @@ renderer2.setSize(width, height);
 c2.appendChild(renderer2.domElement);
 
 const geometry2 = new THREE.ConeGeometry(1, 2, 32);
-const material2 = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
+const material2 = new THREE.MeshBasicMaterial({ color: color2});
 const pyramid = new THREE.Mesh(geometry2, material2);
 scene2.add(pyramid);
 
@@ -42,7 +45,7 @@ renderer3.setSize(width, height);
 c3.appendChild(renderer3.domElement);
 
 const geometry3 = new THREE.SphereGeometry(1, 32, 32);
-const material3 = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
+const material3 = new THREE.MeshBasicMaterial({ color: color3 });
 const sphere = new THREE.Mesh(geometry3, material3);
 scene3.add(sphere);
 
@@ -80,6 +83,19 @@ function animate() {
   renderer1.render(scene1, camera1);
   renderer2.render(scene2, camera2);
   renderer3.render(scene3, camera3);
+  for (let i = 0; i < 3; i++) {
+    color1[i] = (color1[i] + 0.1) % 255;
+  }
+  material1.color.setRGB(color1[0]/255, color1[1]/255, color1[2]/255);
+  for (let i = 0; i < 3; i++) {
+    color2[i] = (color2[i] + 0.1) % 255;
+  }
+  material2.color.setRGB(color2[0]/255, color2[1]/255, color2[2]/255);
+  for (let i = 0; i < 3; i++) {
+    color3[i] = (color3[i] + 0.1) % 255;
+  }
+  material3.color.setRGB(color3[0]/255, color3[1]/255, color3[2]/255);
+
 }
 
 renderer1.setAnimationLoop(animate);

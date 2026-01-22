@@ -1,26 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-import * as topojson from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm"; // Импорт библиотеки для работы с topojson
+import * as topojson from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm"; 
 
-const n = 50;
-let interp = d3.interpolateRgb("purple", "orange");
-const colors = Array.from({length: n}, (_, i) => interp(i / (n - 1)));
-
-document.querySelector("#grad").style.cssText = `
-  height: 200px;
-  background: linear-gradient(90deg, ${colors.join(",")});
-`;
-
-function randomcolor() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r},${g},${b})`;
-}
-
-document.body.style.background = `linear-gradient(90deg, ${randomcolor()}, ${randomcolor()})`;
-
-// Теперь определим 'us' для работы с картой
-d3.json("https://d3js.org/us-10m.v1.json").then(function(us) { // Получаем данные для карты
+d3.json("https://d3js.org/us-10m.v1.json").then(function(us) {
   chart(us);
 });
 

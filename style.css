@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+
+#container1 {
+  width: 400px;
+  height: 600px;
+  border: 2px solid #a76969;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000000;
+  order: 1;
+}
+
+#container2 {
+  width: 400px;
+  height: 600px;
+  border: 2px solid #a76969;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000000;
+  order: 3;
+}
+#container3 {
+  width: 400px;
+  height: 600px;
+  border: 2px solid #a76969;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000000;
+  order: 2;
+}
+#grad { 
+  width: 1200px;
+  order: 0;
+}

@@ -1,5 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as topojson from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm"; 
+import { createTimeline, stagger, splitText } from 'animejs';
 
 d3.json("https://d3js.org/us-10m.v1.json").then(function(us) {
   chart(us);
@@ -76,3 +77,19 @@ function chart(us) {
 
   document.body.appendChild(svg.node());
 }
+
+splitText('p', {
+  chars: `<span class="char-3d word-{i}">
+    <em class="face face-top">{value}</em>
+    <em class="face-front">{value}</em>
+    <em class="face face-bottom">{value}</em>
+  </span>`,
+});
+
+const charsStagger = stagger(100, { start: 0 });
+
+createTimeline({ defaults: { ease: 'linear', loop: true, duration: 750 }})
+.add('.char-3d', { rotateX: -90 }, charsStagger)
+.add('.char-3d .face-top', { opacity: [.5, 0] }, charsStagger)
+.add('.char-3d .face-front', { opacity: [1, .5] }, charsStagger)
+.add('.char-3d .face-bottom', { opacity: [.5, 1] }, charsStagger);

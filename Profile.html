@@ -27,14 +27,26 @@
             </div>
         </div>
     </nav>
+    <div class="large centered grid square-grid">
+  <p class="text-xl">
+    Animated SVG Text with Anime.js
+  </p>
+</div>
+<script type="importmap">
+{
+  "imports": {
+    "animejs": "https://cdn.jsdelivr.net/npm/animejs@4.3.0/dist/modules/index.js"
+  }
+}
+</script>
     <bodyp>
         <svg viewBox="0 0 304 112">
             <g stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width="2">
 
                 <!-- A -->
-                <path class="line" d="M18 90 L38 22 L58 90" />
-                <path class="line" d="M26 62 L50 62" />
+                 <path class="line" d="M12 90 C20 76, 26 58, 33 34 C35 26, 37 22, 41 26 C46 31, 51 54, 56 72 C58 80, 60 86, 62 90" />
+                 <path class="line" d="M24 64 C35 60, 44 61, 53 63"/>
 
                 <!-- r -->
                 <path class="line" d="M72 90 C72 50, 70 51, 68 53" />
@@ -51,17 +63,17 @@
                          C175 70, 156 70, 144 70" />
 
                 <!-- m -->
-                <path class="line" d="M190 90 L190 52" />
+                <path class="line" d="M190 90 C190 52, 190 52, 185 48" />
                 <path class="line" d="M190 56 C196 46, 212 46, 216 58
                          C220 46, 238 46, 242 58
-                         C246 70, 246 90, 246 90" />
-                <path class="line" d="M216 58 C218 66, 218 90, 218 90" />
+                         C246 70, 246 90, 250 90" />
+                <path class="line" d="M216 58 C218 66, 218 90, 224 86" />
 
             </g>
 
         </svg>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script src="pro.js"></script>
+        <script type="module" src="pro.js"></script>
     </bodyp>
 </body>
 

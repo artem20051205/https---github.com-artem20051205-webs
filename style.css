@@ -54,4 +54,41 @@ svg {
 #grad { 
   width: 1200px;
   order: 0;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.char-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 1rem;
+}
+
+.face {
+  position: absolute;
+  left: 0;
+}
+
+.face-bottom {
+  top: 100%;
+  transform-origin: 50% 0%;
+  transform: rotateX(90deg);
+}
+
+.face-top {
+  bottom: 100%;
+  transform-origin: 50% 100%;
+  transform: rotateX(-90deg);
+}
+#text-split .text-xl {
+  font-size: 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  color: currentColor;
+  align-items: center;  
+  justify-content: center;
+  text-align: center; 
+  letter-spacing: 0.06em;
+  line-height: 1.35;
 }
